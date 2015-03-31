@@ -1,11 +1,726 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>403 Forbidden</title>
-</head>
-<body>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+    	<!-- meta charec set -->
+        <meta charset="utf-8">
+		<!-- Always force latest IE rendering engine or request Chrome Frame -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- Page Title -->
+        <title>One Track</title>		
+		<!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Google Font -->
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-<p>Directory access is forbidden.</p>
+		<!-- CSS
+		================================================== -->
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+		<!-- Twitter Bootstrap css -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+		<!-- jquery.fancybox  -->
+        <link rel="stylesheet" href="../css/jquery.fancybox.css">
+		<!-- animate -->
+        <link rel="stylesheet" href="../css/animate.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="../css/main.css">
+		<!-- media-queries -->
+        <link rel="stylesheet" href="../css/media-queries.css">
+        <!-- slider css -->
+        <link rel="stylesheet" href="../css/slide.css">
+		<!-- Modernizer Script for old Browsers -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <!-- Main jQuery -->
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        
+		<script> 
+		$(document).ready(function(){
+			// Expand Panel
+			$("#open").click(function(){
+				$("#panel").slideDown("slow");
+			
+			});	
+			
+			// Collapse Panel
+			$("#close").click(function(){
+				$("#panel").slideUp("slow");	
+			});
+		
+		$(window).scroll(function() {
+		    if ($(this).scrollTop() > 1){  
+		        $('#navigation-header').addClass("sticky");
+		    }
+		    else{
+		        $('#navigation-header').removeClass("sticky");
+		    }
+		});
+		// Switch buttons from "Log In | Register" to "Close Panel" on click
+		$("#toggle a").click(function () {
+			$("#toggle a").toggle();
+		});
+		});
+		</script>
+        
+    </head>
+    
+	
+    <body id="body">
+	
+		<!-- preloader -->
+		<div id="preloader">
+			<img src="../img/preloader.gif" alt="Preloader">
+		</div>
+		<!-- end preloader -->
+		   <div id="toppanel">
+                <div id="panel">				
+						<div class="right">
+							<form  action="#" method="post">
+								<h1>Member Login</h1>
+								<label class="grey" for="log">Username:</label>
+								<input class="field" type="text" name="log" id="log" value="" size="23" />
+								<label class="grey" for="pwd">Password:</label>
+								<input class="field" type="password" name="pwd" id="pwd" size="23" />
+				            	<label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> &nbsp;Remember me</label>
+			        			<div class="clear"></div>
+								<input type="button" name="submit" value="Login" class="bt_login" />
+								<a class="lost-pwd" href="#">Forgot Password</a>
+							</form>
+						</div>
+						<div class="left right">			
+							<!-- Register Form -->
+							<form action="#" method="post">
+								<h1>Not a member yet? Sign Up!</h1>				
+								<label class="grey" for="signup">Username:</label>
+								<input class="field" type="text" name="signup" id="signup" value="" size="23" />
+								<label class="grey" for="email">Email:</label>
+								<input class="field" type="text" name="email" id="email" size="23" />
+								<input type="submit" name="submit" value="Register" class="bt_register" />
+							</form>
+						</div>					
+				</div>
+				<div class="tab">
+					<ul class="login">
+						<li class="right">&nbsp;</li>
+						<li>Hello Guest!</li>
+						<li class="sep">|</li>
+						<li id="toggle">
+							<a id="open" class="open" href="#" style="width: 115px;">Log In | SignUp</a>
+							<a id="close" style="display: none;" class="close" href="#">Close</a>			
+						</li>
+						<li class="left">&nbsp;</li>
+					</ul> 
+				</div>
+               
+			</div>
+			<!--<div id="navigation-header">
+			<a class="navbar-brand" href="#body"><h1><b>OneTrack</b></h1></a>
+			<nav class="collapse navbar-collapse navbar-left" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="current"><a href="#body">Home</a></li>
+                        <li><a href="#features">What we do</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+			</div>-->
+        <!--Fixed Navigation
+        ====================================-->
+        <div id="navigation-header" >
+            <div class="container">
 
-</body>
+                <a class="navbar-brand" href="#body"><h1><b>OneTrack</b></h1></a>
+			
+                <nav class="collapse navbar-collapse navbar-left" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="current"><a href="#body">Home</a></li>
+                        <li><a href="#features">What we do</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+    
+        
+      <!--  End Fixed Navigation
+        ==================================== -->
+
+		
+        <!--
+        Home Slider
+        ==================================== -->
+		
+			<section style="background:url(../img/banner.jpg);background-size: cover;">
+						
+				
+				<!-- Wrapper for slides -->
+				
+					
+					<!-- single slide -->
+					<div class="row" style="padding-top: 5%;">
+						<div class="carousel-caption" style="left: 0px; width: 70%;padding-bottom: 0px; padding-top: 0px; height: 100px;">
+							<h2 data-wow-duration="700ms" style="color:#0eb493;" data-wow-delay="500ms" class="wow bounceInDown animated"><span> OneTrack</span>!</h2>
+							<p data-wow-duration="1000ms" style="color:#0eb493;" class="wow slideInRight animated">We take care of your Warrenty</p>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+							</ul>
+						</div>
+							<!-- Tracking Portal -->
+        				<!--<div align="right" style="width: 25%; float: right; padding-top: 13%;">-->
+        				<div style="float:right;width: 30%;padding-right:10%">
+        					<div style="background:#ffffff; height: 300px;">
+								<div class="text-center wow bounceInDown" data-wow-duration="500ms" style="background: rgba(14,180,147, 0.9);">
+									<h2 style="color:#ffffff;height:50px;"><b>Track Warrenty</b></h2>
+								</div>
+								<br>
+									<div style="padding-left: 15%; width: 80%;">				
+									<div class="input-field mb50 wow bounceInDown">
+										<input type="text"  class="form-control" name="name" id="name" placeholder="Serial Number">
+									</div>
+									<div class="input-field mb50 bounceInDown">
+										<input id="products" class="form-control" type="text" data-provide="typeahead" placeholder="Select Product">
+									</div>
+									<div class="text-center mb50 wow bounceInDown" data-wow-duration="500ms">
+									<input type="submit" class="btn btn-default" id="" value="Track">
+									</div>
+									</div>
+							</div>			
+						</div>					
+		
+      					  <!-- Tracking Portal Ends -->
+						
+										 
+					</div>
+					<!-- end single slide -->
+					
+			
+				
+				<!-- End Wrapper for slides -->
+				
+			
+	</section>
+		
+		
+		
+        <!--
+        End Home SliderEnd
+        ==================================== -->
+        
+        		    <!-- Tracking Portal
+        <section id="tracking" class="tracking">
+								<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+									<h2>Track Warrenty</h2>
+									<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+								</div>							
+									<div class="input-field text-center mb50">
+										<input type="text" name="name" id="name" width="100%" placeholder="Serial Number">
+										<input id="products" type="text" data-provide="typeahead" placeholder="Select Product">
+									</div>	
+									<div class="text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+									<input type="submit" id="" value="Track">
+								</div>							
+		</section>
+        Tracking Portal Ends -->
+		
+        <!--
+        Features
+        ==================================== -->
+		
+		<section id="features" class="features">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+						<h2>Features</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-github fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Product Tracking</h3>
+								<p>We help you track warrenty details of all your products in one single place.Forget your Warrenty papers !</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-github fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Warrenty Details</h3>
+								<p>Get all your products details at single place.Add as many product as you want and know what is covered in your warrenty package.</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-pencil fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Extend Warrenty</h3>
+								<p>We provide you extended warrenty of your product at your doorstep .No we dont need any documents for that :)</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+						
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Features
+        ==================================== -->
+        		
+        <!--
+       How it works
+        ==================================== -->		
+		
+		<section id="howWorks" class="howWorks">
+			<div class="container">
+				<div class="row">
+		
+					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+						<h2>How it Works</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+						<p>We track and save your warranty details with us.User is notified few days before the product expiary to extend warranty .</p>
+					</div>
+
+					<!-- step1 -->
+					<figure class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="../img/white.jpg" class="img-responsive">
+							<figcaption class="overlay">
+								<p>Register your product with us using our desktop or mobile app.It would take less than 5 min</p>
+							</figcaption>
+						</div>
+						<h4>Step 1:</h4>
+					</figure>
+					<!-- end step1 -->
+					
+					<!-- step2 -->
+					<figure class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="../img/white.jpg" class="img-responsive">
+							<figcaption class="overlay">
+								<p>You can see your registered products and see all details related to it.what is covered and what not in your warrenty package. </p>
+							</figcaption>
+						</div>
+						<h4>Step 2:</h4>
+					</figure>
+					<!-- end step2 -->	
+					
+					<!-- step3 -->
+					<figure class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="../img/white.jpg" class="img-responsive">
+							<figcaption class="overlay">
+								<p>1 Warranty notification alert a week before expiray and thats all .Product saved !</p>
+							</figcaption>
+						</div>
+						<h4>Step 3:</h4>
+					</figure>
+					<!-- end step3 -->		
+					
+				</div>
+			</div>
+		</section>
+		
+        <!--
+       How it works
+        ==================================== -->
+		
+        <!--
+        Meet Our Team
+        ==================================== 		
+		
+		<section id="team" class="team">
+			<div class="container">
+				<div class="row">
+		
+					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+						<h2>Meet Our Team</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+						<p>Yes! we are young and Dynamic ;)</p>
+					</div>
+
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="../img/team/Satyen.jpg" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>Satyen Vishnoi </h5>
+								<p>Hail from Kanpur,a NIT-Bhopal passout.Loves to playaround with android applications</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Satyen Vishnoi</h4>
+						<span>Lead Android Developer</span>
+					</figure>
+					
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="member-thumb">
+							<img src="../img/team/himanshu.jpg" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>Himanshu Arora</h5>
+								<p>Born and bought up in Agra.A perfect geek.Love of life -coding</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Himanshu Arora</h4>
+						<span>Lead Developer</span>
+					</figure>
+					
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="member-thumb">
+							<img src="../img/team/leena.JPG" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>Leena Nimbekar </h5>
+								<p>Only non-geeky member of team.Fun loving.Passionate about work.Proudly called spark of team !</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Leena Nimbekar</h4>
+						<span>Developer</span>
+					</figure>
+					
+					
+				</div>
+			</div>
+		</section>
+		
+        
+        End Meet Our Team
+        ==================================== -->
+		
+		<!--
+        Some fun facts
+        ==================================== -->		
+		
+		<section id="facts" class="facts">
+			<div class="parallax-overlay">
+				<div class="container">
+					<div class="row number-counters">
+						
+						<div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+							<h2>Some Fun Facts</h2>
+							<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+						</div>
+						
+						<!-- first count item -->
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+							<div class="counters-item">
+								<i class="fa fa-clock-o fa-3x"></i>
+								<strong data-to="20">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Hours of Work</p>
+							</div>
+						</div>
+						<!--<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+							<div class="counters-item">
+								<i class="fa fa-users fa-3x"></i>
+								<strong data-to="0">0</strong>
+								<p>Satisfied Clients</p>
+							</div>
+						</div>-->
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+							<div class="counters-item">
+								<i class="fa fa-rocket fa-3x"></i>
+								<strong data-to="0">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p> Products Registered </p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+							<div class="counters-item">
+								<i class="fa fa-trophy fa-3x"></i>
+								<strong data-to="0">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Awards Won</p>
+							</div>
+						</div>
+						<!-- end first count item -->
+				
+					</div>
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Some fun facts
+        ==================================== -->
+		
+		
+		<!--
+        Contact Us
+        ==================================== -->		
+		
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="row mb50">
+				
+					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+						<h2>Let’s Discuss</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+						<p> Happy to help !</p>
+					</div>
+					
+					<!-- contact address -->
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+						<div class="contact-address">
+							<h3>Bangalore</h3>
+							<p>Karnataka</p>
+							<p>(+91) 8884111416</p>
+						</div>
+					</div>
+					<!-- end contact address -->
+					
+					<!-- contact form -->
+					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="contact-form">
+							<h3>Say hello!</h3>
+							<form action="#" id="contact-form">
+								<div class="input-group name-email">
+									<div class="input-field">
+										<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+									</div>
+									<div class="input-field">
+										<input type="email" name="email" id="email" placeholder="Email" class="form-control">
+									</div>
+								</div>
+								<div class="input-group">
+									<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+								</div>
+								<div class="input-group">
+									<input type="submit" id="form-submit" class="pull-right" value="Send message">
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end contact form -->
+					
+					<!-- footer social links -->
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<ul class="footer-social">
+							<li><a href="https://www.twitter.com"><i class="fa fa-twitter fa-2x"></i></a></li>
+							<li><a href="https://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a></li>
+						</ul>
+					</div>
+					<!-- end footer social links -->
+					
+				</div>
+			</div>
+			
+			<!-- Google map -->
+			<div id="map_canvas" class="wow bounceInDown animated" data-wow-duration="500ms"></div>
+			<!-- End Google map -->
+			
+		</section>
+		
+        <!--
+        End Contact Us
+        ==================================== -->
+		
+		
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="footer-single">
+							<img src="../img/logo.png" alt="">
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="footer-single">
+							<h6>Subscribe </h6>
+							<form action="#" class="subscribe">
+								<input type="text" name="subscribe" id="subscribe">
+								<input type="submit" value="&#8594;" id="subs">
+							</form>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single">
+							<h6>Explore</h6>
+							<ul>
+								<li><a href="#">Inside Us</a></li>
+								<li><a href="#">Flickr</a></li>
+								<li><a href="#">Google</a></li>
+								<li><a href="#">Forum</a></li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="footer-single">
+							<h6>Support</h6>
+							<ul>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Market Blog</a></li>
+								<li><a href="#">Help Center</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright text-center">
+							Copyright © 2015 <a href="">OneTrack</a>. All rights reserved. Designed & developed by <a href="">OneTrack</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<!-- Single Page Nav -->
+        <script src="../js/jquery.singlePageNav.min.js"></script>
+		<!-- Twitter Bootstrap -->
+        <script src="../js/bootstrap.min.js"></script>
+		<!-- jquery.fancybox.pack -->
+        <script src="../js/jquery.fancybox.pack.js"></script>
+		<!-- jquery.mixitup.min -->
+        <script src="../js/jquery.mixitup.min.js"></script>
+		<!-- jquery.parallax -->
+        <script src="../js/jquery.parallax-1.1.3.js"></script>
+		<!-- jquery.countTo -->
+        <script src="../js/jquery-countTo.js"></script>
+		<!-- jquery.appear -->
+        <script src="../js/jquery.appear.js"></script>
+		<!-- Contact form validation -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<!-- Google Map -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<!-- jquery easing -->
+        <script src="../js/jquery.easing.min.js"></script>
+		<!-- jquery easing -->
+        <script src="../js/wow.min.js"></script>
+        <!-- typehead -->
+        <script src="../js/bootstrap-typeahead.js"></script>
+
+		<script>
+			var wow = new WOW ({
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       120,          // distance to the element when triggering the animation (default is 0)
+				mobile:       false,       // trigger animations on mobile devices (default is true)
+				live:         true        // act on asynchronously loaded content (default is true)
+			  }
+			);
+			wow.init();
+		</script> 
+		
+		<!-- Custom Functions -->
+        <script src="../js/custom.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				/* ========================================================================= */
+				/*	Contact Form
+				/* ========================================================================= */
+				
+				$('#contact-form').validate({
+					rules: {
+						name: {
+							required: true,
+							minlength: 2
+						},
+						email: {
+							required: true,
+							email: true
+						},
+						message: {
+							required: true
+						}
+					},
+					messages: {
+						name: {
+							required: "come on, you have a name don't you?",
+							minlength: "your name must consist of at least 2 characters"
+						},
+						email: {
+							required: "no email, no message"
+						},
+						message: {
+							required: "um...yea, you have to write something to send this form.",
+							minlength: "thats all? really?"
+						}
+					},
+					submitHandler: function(form) {
+						$(form).ajaxSubmit({
+							type:"POST",
+							data: $(form).serialize(),
+							url:"process.php",
+							success: function() {
+								$('#contact-form :input').attr('disabled', 'disabled');
+								$('#contact-form').fadeTo( "slow", 0.15, function() {
+									$(this).find(':input').attr('disabled', 'disabled');
+									$(this).find('label').css('cursor','default');
+									$('#success').fadeIn();
+								});
+							},
+							error: function() {
+								$('#contact-form').fadeTo( "slow", 0.15, function() {
+									$('#error').fadeIn();
+								});
+							}
+						});
+					}
+				});
+			});
+		</script>
+    </body>
 </html>
