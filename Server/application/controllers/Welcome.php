@@ -21,15 +21,15 @@ class Welcome extends CI_Controller {
         public function __construct() {
             parent::__construct();
             $this->load->library('session');
-            $this->load->library('facebook');
         }
         
 	public function index()
 	{
-            	$this->load->view('header');
-                $this->load->view('test_view');
-                $this->load->view('footer');
-                $login_url = $this->facebook->get_user();
-                var_dump($login_url);
+            $this->load->library('facebook');
+            $this->load->view('header');
+            $this->load->view('test_view');
+            $this->load->view('footer');
+            $login_url = $this->facebook->get_user();
+            var_dump($login_url);
         }
 }
