@@ -20,7 +20,7 @@ class User extends CI_Controller {
 	**/
 	public function facebook() {
            $login_url = $this->facebook->login_url();
-           echo $login_url;die;
+           echo $login_url;die
 	}
 	
 	/**
