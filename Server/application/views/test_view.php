@@ -30,3 +30,6 @@
 <input type='submit' value='Submit'/>
 </p>
 </form>
+
+<h1>Facebook Login</h1>
+<a href="/user/facebook">Login with Facebook</a>

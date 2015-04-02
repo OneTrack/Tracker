@@ -12,13 +12,15 @@ class User extends CI_Controller {
 	public function __construct() {
             parent::__construct();
             $this->load->model('user_model');
+            $this->load->library('facebook');
         }
 	
 	/**
 	* Dashboard Operations
 	**/
-	public function index() {
-           
+	public function facebook() {
+           $login_url = $this->facebook->login_url();
+           echo $login_url;die;
 	}
 	
 	/**
@@ -51,15 +53,17 @@ class User extends CI_Controller {
 	public function registration() { 
             try {
                 $this->load->library('form_validation');
-
-                $this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[3]|xss_clean');
+                $this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[3]');
                 $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
                 $this->form_validation->set_rules('confirm_password', 'Password Confirmation', 'trim|required|matches[password]');
                 
-                if($this->form_validation->run() == TRUE) {
-                    echo (validation_errors()); die;
+                if($this->form_validation->run() == FALSE) {
+                    echo json_encode(trim(validation_errors())); die;
                 } else {
+                    if($this->user_model->check_if_exist()){
+                        echo json_encode('User Already Exist');die;
+                    }
                     $this->user_model->add_user();
                     return TRUE;
                 }
