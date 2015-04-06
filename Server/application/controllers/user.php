@@ -1,5 +1,4 @@
 <?php
-
 /***
  * @File : user.php Controller
  * @Class : Model_Sales
@@ -13,6 +12,7 @@ class User extends CI_Controller {
             parent::__construct();
             $this->load->model('user_model');
             $this->load->library('facebook');
+            $this->load->library('gmail');
         }
 	
 	/**
@@ -20,7 +20,17 @@ class User extends CI_Controller {
 	**/
 	public function facebook() {
            $login_url = $this->facebook->login_url();
-           echo $login_url;die;
+           echo $login_url;
+           die;
+	}
+	
+	/**
+	 * Dashboard Operations
+	 **/
+	public function gmail() {
+		$login_gmail = $this->gmail->login_gmail();
+		echo $login_gmail;
+        die;
 	}
 	
 	/**

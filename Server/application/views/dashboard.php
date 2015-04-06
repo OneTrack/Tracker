@@ -1,10 +1,9 @@
-<section style="background:url(/assets/images/banner.jpg);background-size: cover;">
+<section style="background:url(/assets/images/banner.jpg);background-size: cover;height:600px">
     <!-- Wrapper for slides -->
     <!-- single slide -->
-    <div class="row" style="padding-top: 5%;">
-            <div class="carousel-caption" style="left: 0px; width: 70%;padding-bottom: 0px; padding-top: 0px; height: 100px;">
+            <!--<div class="carousel-caption" style="left: 0px; width: 70%;padding-bottom: 0px; padding-top: 0px; height: 100px;">
                     <h2 data-wow-duration="700ms" style="color:#0eb493;" data-wow-delay="500ms" class="wow bounceInDown animated"><span> OneTrack</span>!</h2>
-                    <p data-wow-duration="1000ms" style="color:#0eb493;" class="wow slideInRight animated">We take care of your Warrenty</p>
+                    <p data-wow-duration="1000ms" style="color:#0eb493;" class="wow slideInRight animated">We take care of your Warranty</p>
 
                     <ul class="social-links text-center">
                             <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
@@ -12,31 +11,19 @@
                             <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
                             <li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
                     </ul>
-            </div>
+            </div>-->
                     <!-- Tracking Portal -->
-    <!--<div align="right" style="width: 25%; float: right; padding-top: 13%;">-->
-    <div style="float:right;width: 30%;padding-right:10%">
-            <div style="background:#ffffff; height: 300px;">
-                            <div class="text-center wow bounceInDown" data-wow-duration="500ms" style="background: rgba(14,180,147, 0.9);">
-                                    <h2 style="color:#ffffff;height:50px;"><b>Track Warrenty</b></h2>
+                    
+    				<div align="right" style="width:35%;padding-right:10%;padding-top: 5%;font-size:20px;">
+            				<div style="height:200px;overflow:hidden;padding-left:15%;">
+                               <div style="color:#ffffff;font-size:30px" align="center">Track Warranty</div> <br>
+                            <input style="color:#ffffff;" type="text" class="form-control" name="name" id="name" placeholder="Serial Number"><br>
+                            <input style="color:#ffffff;" type="text" id="products" class="form-control" data-provide="typeahead" placeholder="Select Product"><br>
+                            <div align="center"><input type="submit" class="btn btn-info btn-block" value="Track" /></div>
                             </div>
-                            <br>
-                            <div style="padding-left: 15%; width: 80%;">				
-                            <div class="input-field mb50 wow bounceInDown">
-                                    <input type="text"  class="form-control" name="name" id="name" placeholder="Serial Number">
-                            </div>
-                            <div class="input-field mb50 bounceInDown">
-                                    <input id="products" class="form-control" type="text" data-provide="typeahead" placeholder="Select Product">
-                            </div>
-                            <div class="text-center mb50 wow bounceInDown" data-wow-duration="500ms">
-                            <input type="submit" class="btn btn-default" value="Track" />
-                            </div>
-                            </div>
-                    </div>			
-            </div>					
+                    </div>								
 
-      <!-- Tracking Portal Ends -->
-    </div>
+      <!-- Tracking Portal Ends -->  				
 </section>
 		
 <section id="features" class="features">
@@ -57,7 +44,7 @@
 
                                         <div class="service-desc">
                                                 <h3>Product Tracking</h3>
-                                                <p>We help you track warrenty details of all your products in one single place.Forget your Warrenty papers !</p>
+                                                <p>We help you track Warranty details of all your products in one single place.Forget your Warranty papers !</p>
                                         </div>
                                 </div>
                         </div>
@@ -71,8 +58,8 @@
                                         </div>
 
                                         <div class="service-desc">
-                                                <h3>Warrenty Details</h3>
-                                                <p>Get all your products details at single place.Add as many product as you want and know what is covered in your warrenty package.</p>
+                                                <h3>Warranty Details</h3>
+                                                <p>Get all your products details at single place.Add as many product as you want and know what is covered in your Warranty package.</p>
                                         </div>
                                 </div>
                         </div>
@@ -86,8 +73,8 @@
                                         </div>
 
                                         <div class="service-desc">
-                                                <h3>Extend Warrenty</h3>
-                                                <p>We provide you extended warrenty of your product at your doorstep .No we dont need any documents for that :)</p>
+                                                <h3>Extend Warranty</h3>
+                                                <p>We provide you extended Warranty of your product at your doorstep .No we dont need any documents for that :)</p>
                                         </div>
                                 </div>
                         </div>
@@ -107,7 +94,7 @@
                         </div>
 
                         <div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
-                                <p>We track and save your warranty details with us.User is notified few days before the product expiary to extend warranty .</p>
+                                <p>We track and save your warranty details with us.User is notified few days before the product expiry to extend warranty .</p>
                         </div>
 
                         <!-- step1 -->
@@ -127,7 +114,7 @@
                                 <div class="member-thumb">
                                         <img src="/assets/images/white.jpg" class="img-responsive">
                                         <figcaption class="overlay">
-                                                <p>You can see your registered products and see all details related to it.what is covered and what not in your warrenty package. </p>
+                                                <p>You can see your registered products and see all details related to it.what is covered and what not in your Warranty package. </p>
                                         </figcaption>
                                 </div>
                                 <h4>Step 2:</h4>
@@ -150,37 +137,26 @@
         </div>
 </section>
 		
-<section id="facts" class="facts">
+<!--<section id="facts" class="facts">
         <div class="parallax-overlay">
                 <div class="container">
                         <div class="row number-counters">
-
                                 <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
                                         <h2>Some Fun Facts</h2>
                                         <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
                                 </div>
 
-                                <!-- first count item -->
                                 <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
                                         <div class="counters-item">
                                                 <i class="fa fa-clock-o fa-3x"></i>
                                                 <strong data-to="20">0</strong>
-                                                <!-- Set Your Number here. i,e. data-to="56" -->
                                                 <p>Hours of Work</p>
                                         </div>
                                 </div>
-                                <!--<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                                        <div class="counters-item">
-                                                <i class="fa fa-users fa-3x"></i>
-                                                <strong data-to="0">0</strong>
-                                                <p>Satisfied Clients</p>
-                                        </div>
-                                </div>-->
                                 <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
                                         <div class="counters-item">
                                                 <i class="fa fa-rocket fa-3x"></i>
                                                 <strong data-to="0">0</strong>
-                                                <!-- Set Your Number here. i,e. data-to="56" -->
                                                 <p> Products Registered </p>
                                         </div>
                                 </div>
@@ -188,16 +164,14 @@
                                         <div class="counters-item">
                                                 <i class="fa fa-trophy fa-3x"></i>
                                                 <strong data-to="0">0</strong>
-                                                <!-- Set Your Number here. i,e. data-to="56" -->
                                                 <p>Awards Won</p>
                                         </div>
                                 </div>
-                                <!-- end first count item -->
 
                         </div>
                 </div>
         </div>
-</section>
+</section-->
 	
 <section id="contact" class="contact">
         <div class="container">
@@ -247,7 +221,7 @@
                         <!-- end contact form -->
 
                         <!-- footer social links -->
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated">
                                 <ul class="footer-social">
                                         <li><a href="https://www.twitter.com"><i class="fa fa-twitter fa-2x"></i></a></li>
                                         <li><a href="https://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a></li>
@@ -258,7 +232,7 @@
                 </div>
         </div>
 
-        <!-- Google map -->
+        <!-- Google map>
         <div id="map_canvas" class="wow bounceInDown animated" data-wow-duration="500ms"></div>
         <!-- End Google map -->
 
