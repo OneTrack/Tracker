@@ -37,19 +37,23 @@ class User extends CI_Controller {
 	 * @Params	: NULL
 	 */
 	public function login() {
+            $response_data  =	array();
             try {
                 $email          =	$this->input->post('email');
                 $password       =	$this->input->post('password');
                 $result         =	$this->user_model->login($email,$password);
-                $response_data  =	array();
                 if($result){
-                    $response_data['response'] = TRUE;
+                    $response_data['response']['result'] = TRUE;
+                    $response_data['response']['message'] = "Login Success";
                 } else {
-                    $response_data['response'] = FALSE;
+                    $response_data['response']['result'] = FALSE;
+                    $response_data['response']['message'] = "Invalid Username or Password";
                 }
+                echo '<pre>'; print_r(json_encode($response_data));die;
                 echo json_encode($response_data);die;
             } catch (Exception $e){
-                $response_data  =	array('response' => $e->getMessage());
+                $response_data['response']['result'] = FALSE;
+                $response_data['response']['message'] = $e->getMessage();
                 echo json_encode($response_data);die;
             }
 	}
@@ -61,25 +65,28 @@ class User extends CI_Controller {
 	 * @Params	: NULL
 	 */
 	public function registration() { 
+            $response_data  =	array();
             try {
                 $this->load->library('form_validation');
                 $this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[3]');
                 $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
                 $this->form_validation->set_rules('confirm_password', 'Password Confirmation', 'trim|required|matches[password]');
-                $response_data  =	array();
                 if($this->form_validation->run() == FALSE) {
                     $response_data['response'] = trim(validation_errors());
                 } else {
                     if($this->user_model->check_if_exist()){
-                        $response_data['response'] = 'User Already Exist';
+                        $response_data['response']['result'] = FALSE;
+                        $response_data['response']['message'] = 'User Already Exist';
                     }
                     $this->user_model->add_user();
-                    $response_data['response'] = TRUE;
+                    $response_data['response']['result'] = TRUE;
+                    $response_data['response']['message'] = "Registration Success";
                 }
                 echo json_encode($response_data);die;
             } catch(Exception $e){
-                $response_data  =	array('response' => $e->getMessage());
+                $response_data['response']['result'] = FALSE;
+                $response_data['response']['message'] = $e->getMessage();
                 echo json_encode($response_data);die;
             }
 	}
