@@ -37,11 +37,21 @@ class User extends CI_Controller {
 	 * @Params	: NULL
 	 */
 	public function login() {
-            $email	=	$this->input->post('email');
-            $password	=	$this->input->post('password');
-            $result	=	$this->user_model->login($email,$password);
-            if($result) return (TRUE);
-            else        return (FALSE);
+            try {
+                $email          =	$this->input->post('email');
+                $password       =	$this->input->post('password');
+                $result         =	$this->user_model->login($email,$password);
+                $response_data  =	array();
+                if($result){
+                    $response_data['response'] = TRUE;
+                } else {
+                    $response_data['response'] = FALSE;
+                }
+                echo json_encode($response_data);die;
+            } catch (Exception $e){
+                $response_data  =	array('response' => $e->getMessage());
+                echo json_encode($response_data);die;
+            }
 	}
 	
         /**
@@ -57,18 +67,20 @@ class User extends CI_Controller {
                 $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
                 $this->form_validation->set_rules('confirm_password', 'Password Confirmation', 'trim|required|matches[password]');
-                
+                $response_data  =	array();
                 if($this->form_validation->run() == FALSE) {
-                    echo json_encode(trim(validation_errors())); die;
+                    $response_data['response'] = trim(validation_errors());
                 } else {
                     if($this->user_model->check_if_exist()){
-                        echo json_encode('User Already Exist');die;
+                        $response_data['response'] = 'User Already Exist';
                     }
                     $this->user_model->add_user();
-                    return TRUE;
+                    $response_data['response'] = TRUE;
                 }
+                echo json_encode($response_data);die;
             } catch(Exception $e){
-                echo $e->getMessage();die;
+                $response_data  =	array('response' => $e->getMessage());
+                echo json_encode($response_data);die;
             }
 	}
 	
