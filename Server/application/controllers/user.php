@@ -49,7 +49,6 @@ class User extends CI_Controller {
                     $response_data['response']['result'] = FALSE;
                     $response_data['response']['message'] = "Invalid Username or Password";
                 }
-                echo '<pre>'; print_r(json_encode($response_data));die;
                 echo json_encode($response_data);die;
             } catch (Exception $e){
                 $response_data['response']['result'] = FALSE;
