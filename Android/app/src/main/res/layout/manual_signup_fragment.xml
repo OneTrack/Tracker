@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"  android:gravity="center_horizontal">
+
+    <!-- Login progress -->
+    <ProgressBar android:id="@+id/manual_signup_progress" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" android:visibility="gone" />
+
+    <ScrollView android:id="@+id/manual_signup_form" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout android:id="@+id/email_signup_form" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:orientation="vertical"
+                android:background="@color/one_track_main_color" android:gravity="center_horizontal">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+
+                <EditText android:id="@+id/manual_signup_name" android:layout_width="300dp"
+                    android:layout_height="wrap_content" android:hint="@string/prompt_name"
+                    android:inputType="text" android:maxLines="1"
+                    android:singleLine="true" android:textColor="@color/login_button_color"
+                    android:layout_marginBottom="30dp" android:textColorHint="@color/login_button_color"
+                    android:gravity="center_horizontal" android:background="@drawable/manual_login_edit_text_holo_light"/>
+
+                <AutoCompleteTextView android:id="@+id/manual_signup_email" android:layout_width="300dp"
+                    android:layout_height="wrap_content" android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress" android:maxLines="1"
+                    android:singleLine="true" android:textColor="@color/login_button_color"
+                    android:layout_marginBottom="30dp" android:textColorHint="@color/login_button_color"
+                    android:gravity="center_horizontal" android:background="@drawable/manual_login_edit_text_holo_light"/>
+
+                <EditText android:id="@+id/manual_signup_password" android:layout_width="300dp"
+                    android:layout_height="wrap_content" android:hint="@string/prompt_password"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified" android:inputType="textPassword"
+                    android:maxLines="1" android:singleLine="true"
+                    android:layout_marginBottom="30dp" android:textColor="@color/login_button_color"
+                    android:textColorHint="@color/login_button_color" android:gravity="center_horizontal"
+                    android:background="@drawable/manual_login_edit_text_holo_light"/>
+
+                <EditText android:id="@+id/manual_signup_cnf_password" android:layout_width="300dp"
+                    android:layout_height="wrap_content" android:hint="@string/prompt_confirm_password"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified" android:inputType="textPassword"
+                    android:maxLines="1" android:singleLine="true"
+                    android:layout_marginBottom="30dp" android:textColor="@color/login_button_color"
+                    android:textColorHint="@color/login_button_color" android:gravity="center_horizontal"
+                    android:background="@drawable/manual_login_edit_text_holo_light"/>
+
+                <Button android:id="@+id/manual_sign_up_button" style="?android:textAppearanceSmall"
+                    android:layout_width="300dp" android:layout_height="wrap_content"
+                    android:text="@string/action_sign_up_caps" android:layout_marginBottom="30dp"
+                    android:textStyle="bold" android:textColor="@color/one_track_main_color"
+                    android:background="@color/login_button_color"/>
+
+            </LinearLayout>
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb_manual_signup_button"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:text="Facebook Login"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"/>
+
+            <Button
+                android:id="@+id/gmail_manual_signup_button"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Gmail Login"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@id/fb_login_button"
+                android:textColor="@color/login_button_color"
+                android:background="@color/material_blue_grey_800"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
