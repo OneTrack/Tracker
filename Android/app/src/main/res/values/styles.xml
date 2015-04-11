@@ -1,8 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name= "AppBaseTheme" parent="Theme.AppCompat.Light"/>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="AppBaseTheme">
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="CardViewTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">@color/cardview_text_color</item>
+    </style>
+
+    <style name="CardViewTextStyle.Heading">
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="CardViewTextStyle.Subtext">
+        <item name="android:textSize">20dp</item>
+    </style>
+
 
 </resources>

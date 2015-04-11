@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -22,9 +23,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
 import com.onetrack.android.R;
+import com.onetrack.android.session.SessionManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,8 @@ import java.util.List;
 /**
  * A login screen that offers login via email/password.
  */
-public class UserLoginActivity extends FragmentActivity implements LoaderCallbacks<Cursor>, UserLoginChoiceFragment.onButtonClickListener{
+public class UserLoginActivity extends FragmentActivity implements LoaderCallbacks<Cursor>,
+        UserLoginChoiceFragment.LoginChoiceButtonClickListener, ManualLoginFragment.LoginAuthorizationListener{
 
     private interface ProfileQuery {
         String[] PROJECTION = {
@@ -126,14 +130,23 @@ public class UserLoginActivity extends FragmentActivity implements LoaderCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(SessionManager.isLoggedIn()) {
+            Intent intent = new Intent(this,UserHomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.login_activity);
         //LinearLayout container = (LinearLayout)findViewById(R.id.fragment_container);
         FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        UserLoginChoiceFragment userLoginChoiceFragment = new UserLoginChoiceFragment();
-        transaction.add(R.id.fragment_container,userLoginChoiceFragment,CHOICE_FRAGMENT);
-        transaction.commit();
+        UserLoginChoiceFragment userLoginChoiceFragment = (UserLoginChoiceFragment)fm.findFragmentByTag(CHOICE_FRAGMENT);
+        if(userLoginChoiceFragment == null) {
+            FragmentTransaction transaction = fm.beginTransaction();
+            userLoginChoiceFragment = new UserLoginChoiceFragment();
+            transaction.add(R.id.fragment_container, userLoginChoiceFragment, CHOICE_FRAGMENT);
+            transaction.commit();
+        }
 
         /*// Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -310,11 +323,18 @@ public class UserLoginActivity extends FragmentActivity implements LoaderCallbac
         mEmailView.setAdapter(adapter);
     }
 
+    //TODO fragment double transaction issue
     @Override
-    public void onButtonClicked(int buttonID) {
+    public void onChoiceButtonClicked(int buttonID) {
         switch (buttonID) {
             case R.id.login_button :
-               replaceFragment(new ManualLoginFragment());
+                ManualLoginFragment manualLoginFragment = new ManualLoginFragment();
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.replace(R.id.fragment_container,manualLoginFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+                Toast.makeText(this,"replaced",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.sign_up_button :
                 replaceFragment(new ManualSignupFragment());
@@ -322,6 +342,7 @@ public class UserLoginActivity extends FragmentActivity implements LoaderCallbac
             default:
                 break;
         }
+
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -330,6 +351,13 @@ public class UserLoginActivity extends FragmentActivity implements LoaderCallbac
         transaction.replace(R.id.fragment_container,fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onUserAuthorised() {
+        Intent intent = new Intent(this,UserHomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
 

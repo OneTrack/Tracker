@@ -5,5 +5,11 @@ package com.onetrack.android.Utils;
  */
 public class Constants {
 
-    public static final String HOST_NAME = "http://192.168.0.104/";
+    public static final String HOST_NAME = "http://192.168.0.105/index.php/";
+
+    public static final String SESSION_PREFS = "seesion_pref";
+
+    public static final String USER_NAME_PREF = "user_name_pref";
+
+    public static final String USER_PWD_PREF = "user_pwd_pref";
 }

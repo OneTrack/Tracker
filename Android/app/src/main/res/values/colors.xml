@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="one_track_main_color">#0EB493</color>
+    <color name="one_track_primary_color">#009688</color>
+    <color name="one_track_secondary_color">#00897b</color>
     <color name="login_button_color">#FFFFFF</color>
+    <color name="cardview_text_color">#000000</color>
+    <color name="user_home_recycler_view_background">#E0F2F1</color>
+
 </resources>

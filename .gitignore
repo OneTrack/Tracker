@@ -1,0 +1,3 @@
+*.php
+Server/application/config/database.php
+*.php

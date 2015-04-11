@@ -20,7 +20,7 @@
 
             <LinearLayout android:id="@+id/email_signup_form" android:layout_width="match_parent"
                 android:layout_height="match_parent" android:orientation="vertical"
-                android:background="@color/one_track_main_color" android:gravity="center_horizontal">
+                android:background="@color/one_track_primary_color" android:gravity="center_horizontal">
 
                 <View
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 <Button android:id="@+id/manual_sign_up_button" style="?android:textAppearanceSmall"
                     android:layout_width="300dp" android:layout_height="wrap_content"
                     android:text="@string/action_sign_up_caps" android:layout_marginBottom="30dp"
-                    android:textStyle="bold" android:textColor="@color/one_track_main_color"
+                    android:textStyle="bold" android:textColor="@color/one_track_primary_color"
                     android:background="@color/login_button_color"/>
 
             </LinearLayout>

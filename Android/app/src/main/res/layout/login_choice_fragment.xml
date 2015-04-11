@@ -7,7 +7,7 @@
         android:id="@+id/login_tip_container"
         android:layout_width="match_parent"
         android:layout_height="330dp"
-        android:background="@color/one_track_main_color">
+        android:background="@color/one_track_primary_color">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@+id/login_signup_layout"
-        android:background="@color/one_track_main_color"/>
+        android:background="@color/one_track_primary_color"/>
 
 
     <LinearLayout
@@ -64,12 +64,12 @@
             android:text="@string/sign_up"
             style="@android:style/ButtonBar"
             android:background="@color/login_button_color"
-            android:textColor="@color/one_track_main_color"/>
+            android:textColor="@color/one_track_primary_color"/>
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/one_track_main_color"/>
+            android:background="@color/one_track_primary_color"/>
 
         <Button
             android:id="@+id/login_button"
@@ -79,7 +79,7 @@
             android:text="@string/login"
             style="@android:style/ButtonBar"
             android:background="@color/login_button_color"
-            android:textColor="@color/one_track_main_color"/>
+            android:textColor="@color/one_track_primary_color"/>
     </LinearLayout>
 
 

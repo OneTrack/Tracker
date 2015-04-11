@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:layout_marginTop="10dp">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id = "@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView android:id="@+id/cardview_product_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/nexus4"/>
+
+            <TextView android:id="@+id/cardview_product_mfg_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/CardViewTextStyle.Heading"
+                android:layout_alignBaseline="@id/cardview_product_image"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/cardview_product_image"
+                android:text="Google LG"/>
+
+            <TextView android:id="@+id/cardview_model_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardview_product_image"
+                style="@style/CardViewTextStyle.Subtext"
+                android:text="Nexus 4"/>
+
+            <TextView android:id="@+id/cardview_expiry_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardview_model_name"
+                style="@style/CardViewTextStyle.Subtext"
+                android:text="@string/expiry_date"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Nov, 2015"
+                android:layout_toRightOf="@id/cardview_expiry_label"
+                android:layout_alignBaseline="@id/cardview_expiry_label"
+                style="@style/CardViewTextStyle.Subtext"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

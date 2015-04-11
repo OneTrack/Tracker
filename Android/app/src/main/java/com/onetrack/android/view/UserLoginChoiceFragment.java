@@ -23,19 +23,18 @@ import com.onetrack.android.R;
  */
 public class UserLoginChoiceFragment extends android.support.v4.app.Fragment implements View.OnClickListener{
 
-    public interface onButtonClickListener {
-        void onButtonClicked(int buttonID) ;
-    }
-
     private Context mContext;
     private CallbackManager mCallbackManager;
-    private onButtonClickListener mListener;
+    private LoginChoiceButtonClickListener mListener;
 
+    public interface LoginChoiceButtonClickListener {
+        public void onChoiceButtonClicked(int btnId);
+    }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mListener = (onButtonClickListener)activity;
+        mListener = (LoginChoiceButtonClickListener)activity;
     }
 
     @Nullable
@@ -74,7 +73,7 @@ public class UserLoginChoiceFragment extends android.support.v4.app.Fragment imp
 
     @Override
     public void onClick(View v) {
-        mListener.onButtonClicked(v.getId());
+        mListener.onChoiceButtonClicked(v.getId());
        /* switch (v.getId()) {
             case R.id.login_button :
                 mListener.onButtonClicked();

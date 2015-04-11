@@ -1,5 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center_horizontal"
     android:orientation="vertical" >
 
@@ -20,7 +20,7 @@
 
             <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
                 android:layout_height="match_parent" android:orientation="vertical"
-                android:background="@color/one_track_main_color" android:gravity="center_horizontal">
+                android:background="@color/one_track_primary_color" android:gravity="center_horizontal">
 
                 <View
                     android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 <Button android:id="@+id/manual_login_button" style="?android:textAppearanceSmall"
                     android:layout_width="300dp" android:layout_height="wrap_content"
                     android:text="@string/action_sign_in_caps" android:layout_marginBottom="30dp"
-                    android:textStyle="bold" android:textColor="@color/one_track_main_color"
+                    android:textStyle="bold" android:textColor="@color/one_track_primary_color"
                     android:background="@color/login_button_color"/>
 
             </LinearLayout>
