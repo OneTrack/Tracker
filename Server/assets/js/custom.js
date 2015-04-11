@@ -299,5 +299,11 @@ $('#close-panel-bt').click(function() {
         title: '',
     });
 }
+<<<<<<< Updated upstream
 google.maps.event.addDomListener(window, "load", initialize);*/
 // ========== END GOOGLE MAP ========== //
+
+
+function login_facebook(){
+    window.open ('/user/facebook_login','_blank','height=700,width=800,resizable=yes');
+}

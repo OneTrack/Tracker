@@ -8,20 +8,25 @@
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class User extends CI_Controller {
-	public function __construct() {
+	public function __construct() { 
             parent::__construct();
             $this->load->model('user_model');
             $this->load->library('facebook');
             $this->load->library('gmail');
+            $this->load->helper('url');
         }
 	
+        public function index() {
+            $this->load->view('test_view');
+            
+        }
+        
 	/**
 	* Dashboard Operations
 	**/
-	public function facebook() {
+	public function facebook_login() {
            $login_url = $this->facebook->login_url();
-           echo $login_url;
-           die;
+           redirect($login_url);
 	}
 	
 	/**
@@ -30,8 +35,33 @@ class User extends CI_Controller {
 	public function gmail() {
 		$login_gmail = $this->gmail->login_gmail();
 		echo $login_gmail;
-        die;
-	}
+        }
+        
+        /**
+	* Dashboard Operations
+	**/
+	public function facebook_login_callback() {
+            echo "<script type='text/javascript'>window.close();</script>";
+            $user_model = new User_model;
+            $login_data = $this->facebook->get_user();
+            if(isset($login_data['email']) && !empty($login_data['email'])){
+                $user_id = $user_model->check_if_exist($login_data['email']);
+                if($user_id){ // Already Exist
+                    // Do Nothing
+                } else { // New Record Insert
+                    $user_id = $user_model->add_user_from_thirdparty($login_data['email'], isset($login_data['name'])?$login_data['name']:$login_data['first_name']);
+                }
+                $newdata = array(
+                    'user_id'   => $user_id,
+                    'name'      => isset($login_data['name'])?$login_data['name']:$login_data['first_name'],
+                    'email'     => $login_data['email'],
+                    'logged_in' => TRUE,
+
+                );
+                $this->session->set_userdata($newdata);
+            } 
+        }
+       
 	
 	/**
 	* Dashboard Operations
@@ -84,7 +114,7 @@ class User extends CI_Controller {
                 if($this->form_validation->run() == FALSE) {
                     $response_data['response'] = trim(validation_errors());
                 } else {
-                    if($this->user_model->check_if_exist()){
+                    if($this->user_model->check_if_exist($this->input->post('email'))){
                         $response_data['response']['result'] = FALSE;
                         $response_data['response']['message'] = 'User Already Exist';
                     }

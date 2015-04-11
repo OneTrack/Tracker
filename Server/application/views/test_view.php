@@ -1,3 +1,8 @@
+<script src="/assets/js/jquery-1.11.1.min.js"></script>
+
+<script src="/assets/js/custom.js"></script>
+
+
 <h>Registration</h>
 <form method='post' action='/user/registration'/>
 <p>
@@ -32,4 +37,4 @@
 </form>
 
 <h1>Facebook Login</h1>
-<a href="/user/facebook">Login with Facebook</a>
+<a onclick='login_facebook();' href="javascript:void(0);">Login with Facebook</a>
