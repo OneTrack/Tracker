@@ -33,7 +33,7 @@ class Facebook {
     // Create the login helper and replace REDIRECT_URI with your URL
     // Use the same domain you set for the apps 'App Domains'
     // e.g. $helper = new FacebookRedirectLoginHelper( 'http://mydomain.com/redirect' );
-    $this->helper = new FacebookRedirectLoginHelper('http://localhost/');
+    $this->helper = new FacebookRedirectLoginHelper('http://localhost/user/facebook_login_callback');
 
     if ( $this->ci->session->userdata('fb_token') ) {
       $this->session = new FacebookSession( $this->ci->session->userdata('fb_token') );

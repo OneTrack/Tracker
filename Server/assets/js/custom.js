@@ -299,5 +299,16 @@ $('#close-panel-bt').click(function() {
         title: '',
     });
 }
+<<<<<<< Updated upstream
 google.maps.event.addDomListener(window, "load", initialize);*/
 // ========== END GOOGLE MAP ========== //
+
+
+function login_facebook(){
+    var left = (window.screen.width / 2) - ((600 / 2) + 10);
+    var top = (window.screen.height / 2) - ((500 / 2) + 50);
+    window.open('/user/facebook_login','_blank',
+    "status=no,height=500,width=600,resizable=yes,left="
+    + left + ",top=" + top + ",screenX=" + left + ",screenY="
+    + top + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
+}

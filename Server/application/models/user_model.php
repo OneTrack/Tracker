@@ -113,6 +113,34 @@ class User_model extends CI_Model {
         $this->db->insert('users');
 
     }
+    
+    /**
+
+    * @Access       : Public
+
+    * @Function     : add_user
+
+    * @Description  : signup for user
+
+    * @Params       : post data
+
+    */
+
+    public function add_user_from_thirdparty($email, $name) { 
+
+        $this->db->set('name',$name);
+
+        $this->db->set('email',$email);
+
+        $this->db->set('password', '');
+
+        $this->db->set('created_date', 'NOW()', FALSE);
+
+        $this->db->insert('users');
+        
+        return $this->db->insert_id();
+
+    }
 
     
 
@@ -128,9 +156,7 @@ class User_model extends CI_Model {
 
     */
 
-    public function check_if_exist() { 
-
-        $email = $this->input->post('email');
+    public function check_if_exist($email) { 
 
         $query = $this->db->query("SELECT id
 
@@ -142,7 +168,9 @@ class User_model extends CI_Model {
 
         if($query->num_rows()>0) {
 
-            return True;
+            foreach ($query->result() as $row) {
+               return $row->id;
+            }
 
         } else {
 

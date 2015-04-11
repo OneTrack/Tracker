@@ -74,7 +74,13 @@
 <script src="/assets/js/jquery-countTo.js"></script>
         <!-- jquery.appear -->
 <script src="/assets/js/jquery.appear.js"></script>
+<<<<<<< Updated upstream
         <!-- Google Map>
+=======
+        <!-- Contact form validation -->
+<script src="/assets/js/jquery-1.11.1.min.js"></script>
+        <!-- Google Map -->
+>>>>>>> Stashed changes
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <!-- jquery easing -->
 <script src="/assets/js/jquery.easing.min.js"></script>

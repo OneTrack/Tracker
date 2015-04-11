@@ -20,17 +20,8 @@ class Welcome extends CI_Controller {
 	 */
         public function __construct() { 
             parent::__construct();
-            $this->load->library('session');
-            //$this->load->library('facebook');
+            $this->load->library('facebook');
+            $this->load->helper('url');
         }
         
-	public function index()
-	{
-            $this->load->view('header');
-            $this->load->view('navigation_header');
-            $this->load->view('dashboard');
-            $this->load->view('footer');
-            //$login_url = $this->facebook->get_user();
-            //echo '<pre>'; print_r($login_url);
-        }
 }
