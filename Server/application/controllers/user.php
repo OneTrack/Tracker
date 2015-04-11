@@ -26,6 +26,7 @@ class User extends CI_Controller {
 	**/
 	public function facebook_login() {
            $login_url = $this->facebook->login_url();
+           $login_url = $login_url.'&display=popup';
            redirect($login_url);
 	}
 	
