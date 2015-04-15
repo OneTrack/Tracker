@@ -25,8 +25,7 @@ class User_model extends CI_Model {
         parent::__construct(); 
 
            $this->load->database();
-
-           $this->load->library('session');
+           $this->load->helper('string');
 
     }
 
@@ -45,43 +44,20 @@ class User_model extends CI_Model {
     */
 
     public function login($email,$password) {
-
         $email=strtolower($email);
-
         $query = $this->db->query("SELECT id, email, name
-
-					 FROM users
-
-					 WHERE email = '".addslashes($email)."'
-
-					 AND password = AES_ENCRYPT('".addslashes($password)."','".ENCRYPTION_KEY."')",false);
-
+                                    FROM users
+                                    WHERE email = '".addslashes($email)."'
+                                    AND password = AES_ENCRYPT('".addslashes($password)."','".ENCRYPTION_KEY."')",false);
         if($query->num_rows()>0) {
-
-            foreach($query->result() as $rows) {
-
-                $newdata = array(
-
-                	'user_id'   => $rows->id,
-
-                    	'name'      => $rows->name,
-
-		        'email'     => $rows->email,
-
-	                'logged_in' => TRUE,
-
-                );
-
-            }
-
-            $this->session->set_userdata($newdata);
-
-            return TRUE;          
-
-	}
-
-	return FALSE;
-
+            $token  = random_string('alnum',50);
+            $result = (array) $query->result()[0];
+            $this->db->set('token',$token);
+            $this->db->where('id',$result['id']);
+            $this->db->update('users');
+            return $token;          
+        }
+        return FALSE;
     }
 
     
