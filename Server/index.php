@@ -284,7 +284,8 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder);
-
+        
+        define('SITEURL',"http://".$_SERVER['HTTP_HOST']);
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
