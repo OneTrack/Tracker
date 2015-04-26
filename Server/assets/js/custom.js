@@ -174,7 +174,7 @@ $(function(){
                 },
                 password: {
                         required: true,
-                        minlength: 4
+                        minlength: 6
                 },
                 confirm_password:{
                 	equalTo: "#password"
@@ -182,15 +182,15 @@ $(function(){
         },
         messages: {
             name: {
-                    required: "come on, you have a name don't you?",
+                    required: "Please enter your name",
                     minlength: "your name must consist of at least 2 characters"
             },
             email: {
-                    required: "no email, no registration !"
+                    required: "Please enter your email address"
             },
             password: {
-                    required: "Oops you just missed to give password",
-                    minlength: "thats all? really?"
+                    required: "Please enter your password",
+                    minlength: "Password should have minimum 6 characters"
             },
             confirm_password: {
             		equalTo: "Oh no! your confirm password and passowrd didnt match :(",
@@ -206,16 +206,16 @@ $(function(){
                 },
                 password: {
                         required: true,
-                        minlength: 4
+                        minlength: 6
                 }
         },
         messages: {
             email: {
-                    required: "no email, no login"
+                    required: "Please enter your email address"
             },
             password: {
-                required: "Oops you just missed to give password",
-                minlength: "thats all? really?"
+                required: "Please enter your password",
+                minlength: "Password should have minimum 6 characters"
         }
     }
   

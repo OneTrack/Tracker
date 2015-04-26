@@ -76,7 +76,7 @@
 <script src="/assets/js/jquery-countTo.js"></script>
         <!-- jquery.appear -->
 <script src="/assets/js/jquery.appear.js"></script>
-        <!-- Contact form validation -->
+
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <!-- jquery easing -->
