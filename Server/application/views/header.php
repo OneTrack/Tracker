@@ -47,35 +47,35 @@
     </div>
     <div id="right-panel" class="panel">
 	<div id="tabs" role="tabpanel">
-			<div style="padding-left:5%;">
+            <div style="padding-left:5%;">
     		<ul class="nav nav-pills" role="tablist">
     		<li role="presentation"><a href="#userlogin" aria-controls="userlogin" role="tab" data-toggle="pill">Login</a></li>
     		<li role="presentation"><a href="#registration" aria-controls="registration" role="tab" data-toggle="pill">Sign Up</a></li>
     		</ul>
-    		</div><br>
-    		<div class="tab-content" style="padding-left:5%;padding-right:5%">
+            </div>
+            <br>
+            <div class="tab-content" style="padding-left:5%;padding-right:5%">
 		<div role="tabpanel" class="tab-pane active" id="userlogin">
-		    <form method='post' id="login" action='user/login'/>
-		        <input type='email' class="form-control" placeholder='Email' name='email'><br>
-		        <input type='password' class="form-control" placeholder='Password' name='password'><br>
+		    <form method='post' id="login" action='/user/login' >
+                        <input type='email' class="form-control" placeholder='Email' name='email' />
+		        <input type='password' class="form-control" placeholder='Password' name='password' />
 		        <label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever"> &nbsp;Remember me</label>
 		        <input type='submit' value='Login' class="btn btn-info btn-block" />
-		     </form>
+		    </form>
 		    <a class="lost-pwd" href="#">Forgot Password ?</a><br>
 		    <a href="javascript:void(0);" onclick='login_facebook();'><img class='login' src="/assets/images/signInFacebook.png" width="100px" /></a><br>
 		    <a href="/user/gmail"><img class='login' src="/assets/images/gmailSignIn.jpg" width="100px" /></a>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="registration">
-		    <form method='post' id="register" action='/user/registration'/>                           
-		         <input class="form-control" type='text' placeholder='Email' name='email' size="23"><br>
-		         <input class="form-control" type='text' placeholder='Name' name='name' size="23"><br>
-		         <input class="form-control" type='password' placeholder='Password' id='password' name='password' size="23"><br>
-		         <input class="form-control" type='password' placeholder='Confirm Password' id='confirm_password' name='confirm_password' size="23"><br>
-
-		         <input type='submit' value='Register' class="btn btn-info btn-block" />
+		    <form method='post' id="register" action='/user/registration'>                           
+		         <input class="form-control" type='text' placeholder='Email' name='email' size="23" />
+		         <input class="form-control" type='text' placeholder='Name' name='name' size="23" />
+		         <input class="form-control" type='password' placeholder='Password' id='password' name='password' size="23" />
+		         <input class="form-control" type='password' placeholder='Confirm Password' id='confirm_password' name='confirm_password' size="23" />
+                         <input type='submit' value='Register' class="btn btn-info btn-block" />
                     </form>
 		</div>
-		</div>
+            </div>
 	</div>
 </div>
     

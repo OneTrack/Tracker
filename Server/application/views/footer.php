@@ -57,9 +57,11 @@
 <!-- Main jQuery -->
 <script src="/assets/js/jquery-1.11.1.min.js"></script>
 		<!-- Jquery UI -->
+                
+<script src="/assets/js/jquery.validate.min.js"></script>
 <script src="/assets/js/jquery-ui.js"></script>
 <!-- validate jquery -->
-<script src="/assets/js/jquery.validate.min.js"></script>
+
 <!-- panelSlider -->
 <script src="/assets/js/panelslider.js"></script>
 <!-- single page nav -->

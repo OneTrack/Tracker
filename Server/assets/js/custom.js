@@ -158,69 +158,72 @@ $( "section.aw-accordion div" ).mouseover(function() {
 	});
 });
 jQuery.validator.setDefaults({
-	  debug: true,
-	  success: "valid"
-	});
+    debug: true,
+    success: "valid"
+  });
 $(function(){
-	$('#register').validate({
-        rules: {
-                name: {
-                        required: true,
-                        minlength: 2
-                },
-                email: {
-                        required: true,
-                        email: true
-                },
-                password: {
-                        required: true,
-                        minlength: 6
-                },
-                confirm_password:{
-                	equalTo: "#password"
-                }
+$('#register').validate({
+    rules: {
+        name: {
+                required: true,
+                minlength: 2
         },
-        messages: {
-            name: {
-                    required: "Please enter your name",
-                    minlength: "your name must consist of at least 2 characters"
-            },
-            email: {
-                    required: "Please enter your email address"
-            },
-            password: {
-                    required: "Please enter your password",
-                    minlength: "Password should have minimum 6 characters"
-            },
-            confirm_password: {
-            		equalTo: "Oh no! your confirm password and passowrd didnt match :(",
+        email: {
+                required: true,
+                email: true
+        },
+        password: {
+                required: true,
+                minlength: 6
+        },
+        confirm_password:{
+                equalTo: "#password"
         }
-    }
-  
-});
-	$('#login').validate({
-        rules: {
-                email: {
-                        required: true,
-                        email: true
-                },
-                password: {
-                        required: true,
-                        minlength: 6
-                }
+    },
+    messages: {
+        name: {
+                required: "Please enter your name",
+                minlength: "your name must consist of at least 2 characters"
         },
-        messages: {
-            email: {
-                    required: "Please enter your email address"
-            },
-            password: {
+        email: {
+                required: "Please enter your email address"
+        },
+        password: {
                 required: "Please enter your password",
                 minlength: "Password should have minimum 6 characters"
+        },
+        confirm_password: {
+                    equalTo: "Oh no! your confirm password and passowrd didnt match :(",
         }
+    },
+    submitHandler: function(form) {
+        form.submit();
     }
-  
 });
-	
+$('#login').validate({
+    rules: {
+            email: {
+                    required: true,
+                    email: true
+            },
+            password: {
+                    required: true,
+                    minlength: 6
+            }
+    },
+    messages: {
+        email: {
+                required: "Please enter your email address"
+        },
+        password: {
+            required: "Please enter your password",
+            minlength: "Password should have minimum 6 characters"
+        }
+    },
+    submitHandler: function(form) {
+        form.submit();
+    }
+});
 });
 
 $(function(){

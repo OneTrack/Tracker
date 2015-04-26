@@ -16,14 +16,14 @@ class User extends CI_Controller {
             $this->load->helper('url');
             $this->load->library('curl');
             if(isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in']) && isset($_SESSION['email']) && !empty($_SESSION['logged_in'])) {
-                redirect(SITEURL.'/welcome');
+                redirect(SITEURL.'/dashboard');
             }
         }
 	
         public function index() { 
             $this->load->view('header');
-            $this->load->view('navigation_header');
-            $this->load->view('dashboard');
+            //$this->load->view('navigation_header');
+            //$this->load->view('dashboard');
             $this->load->view('footer');
             //$this->load->view('test_view');
         }
@@ -87,8 +87,8 @@ class User extends CI_Controller {
                 if($result_array['response']['result'] == 1){
                     // Login Successful
                     $result_array['response']['data']['logged_in'] = 1;
-                    $this->session->set_userdata($result_array['response']['data']);
-                    redirect(SITEURL.'/welcome');
+                    $this->session->set_userdata($result_array['response']['data']); 
+                    redirect(SITEURL.'/dashboard');
                 } else {
                     // Failure in login
                     echo "<script>alert('Need to handle this');</script>";

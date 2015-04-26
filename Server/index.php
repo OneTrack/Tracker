@@ -222,7 +222,7 @@ switch (ENVIRONMENT)
 	// The name of THIS file
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 	
-	define('SITEURL', $_SERVER['HTTP_HOST']);
+	define('SITEURL',"http://".$_SERVER['HTTP_HOST']);
 
 	// Path to the system folder
 	define('BASEPATH', str_replace('\\', '/', $system_path));
@@ -285,7 +285,7 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder);
         
-        define('SITEURL',"http://".$_SERVER['HTTP_HOST']);
+        
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
