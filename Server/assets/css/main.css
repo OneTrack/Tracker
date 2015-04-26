@@ -751,3 +751,78 @@ border-top:none;
 border-radius:0;
  /*overflow:hidden;*/
 }
+
+.navtabsHeader{
+	background-color:#009688;
+}
+.navtabsHeader li{
+	border: 1px #fff;
+	width:110px;
+	border-right:1px solid #fafafa;
+	border-radius:0;
+	
+}
+.navtabsHeader li a{
+	border-radius: 0;
+    margin: 0;
+    border-right:0;
+}
+.user_right_content{
+float:left;
+width:60%;
+width: calc(100% - 630px);
+}
+.sidepaneHeader{
+border-bottom: 1px solid #fff;	
+}
+.sidepaneHeader h1{
+	font-weight: normal;
+	margin: 0;
+	font-size: 18px;
+	color:black;
+}
+#sidePanel{
+	width:330px;
+	background-color:#80cbc4;
+	float:left;
+}
+/*css for overview Page*/
+.overviewDetails{
+	padding-left:10px;
+	padding-top:10px;
+}
+.overviewHeder{
+font-size:18px;
+background:grey;
+color:white;
+height:20px;
+}
+.viewAllHyper{
+color:green;
+font-size:13px;
+}
+.productHeader{
+  width:10px;
+  background-color:grey;
+}
+.productDetail{
+  width:200px;
+}
+.productDiv img{
+  width:110px;
+}
+.product_info{
+  width: 200px; 
+  border: 1px solid rgb(212, 212, 212); 
+  padding: 12px;
+  height:180px;
+  text-align:center;
+}
+/*css for overview page ends*/
+/*css calender*/
+#calendar {
+float:right;
+padding-right:5px;
+width:270px;
+}
+/*css calnder ends*/

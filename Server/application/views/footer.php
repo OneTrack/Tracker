@@ -56,6 +56,8 @@
 <script src="/assets/js/modernizr-2.6.2.min.js"></script>
 <!-- Main jQuery -->
 <script src="/assets/js/jquery-1.11.1.min.js"></script>
+		<!-- Jquery UI -->
+<script src="/assets/js/jquery-ui.js"></script>
 <!-- validate jquery -->
 <script src="/assets/js/jquery.validate.min.js"></script>
 <!-- panelSlider -->
@@ -74,19 +76,14 @@
 <script src="/assets/js/jquery-countTo.js"></script>
         <!-- jquery.appear -->
 <script src="/assets/js/jquery.appear.js"></script>
-<<<<<<< Updated upstream
-        <!-- Google Map>
-=======
         <!-- Contact form validation -->
-<script src="/assets/js/jquery-1.11.1.min.js"></script>
-        <!-- Google Map -->
->>>>>>> Stashed changes
+
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <!-- jquery easing -->
 <script src="/assets/js/jquery.easing.min.js"></script>
         <!-- jquery easing -->
 <script src="/assets/js/wow.min.js"></script>
-<!-- typehead -->
+		<!-- typehead -->
 <script src="/assets/js/bootstrap-typeahead.js"></script>
 		<!-- Custom Functions -->
 <script src="/assets/js/custom.js"></script>

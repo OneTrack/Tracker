@@ -112,8 +112,8 @@
       }
     });
     //remove tabs
-    $("#userlogin").addClass("active");
-    $("#registration").removeClass("active");
+    //$("#userlogin").addClass("active");
+    //$("#registration").removeClass("active");
   };
   
   $(window).scroll(function (){

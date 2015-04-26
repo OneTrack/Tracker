@@ -28,16 +28,18 @@
         <link rel="stylesheet" href="/assets/css/media-queries.css">
         <!-- slider css -->
         <link rel="stylesheet" href="/assets/css/slide.css">
-		<!-- Modernizer Script for old Browsers -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     </head>
     
     <body id="body">
-    <div style="background-color:#272727;">
+    <div >
     <ul class="nav nav-pills" style="padding-left: 5%">
-     <li><a href="#body" style="font-size:25px;font-family: cursive;line-height: 28px;">OneTrack</a></li>
+     <li><a href="#body" style="color:#272727;font-size:25px;line-height: 28px;">OneTrack</a></li>
     	<ul class="nav navbar-nav navbar-right" style="padding-right: 5%;">
-    		<li><a id="right-panel-link" href="#right-panel">
-    		Login</a>
+    		<li><div id="right-panel-link" href="#right-panel">
+    		<a href="#userlogin" style="color:#272727;" class="open-tab">Login</a>
+    		<a href="#registration" style="color:#272727;" class="open-tab">SignUp</a>
+    		</div>
     		</li>
     	</ul>
     </ul>
@@ -66,8 +68,8 @@
 		    <form method='post' id="register" action='/user/registration'/>                           
 		         <input class="form-control" type='text' placeholder='Email' name='email' size="23"><br>
 		         <input class="form-control" type='text' placeholder='Name' name='name' size="23"><br>
-		         <input class="form-control" type='password' placeholder='Password' name='password' size="23"><br>
-		         <input class="form-control" type='password' placeholder='Confirm Password' name='confirm_password' size="23"><br>
+		         <input class="form-control" type='password' placeholder='Password' id='password' name='password' size="23"><br>
+		         <input class="form-control" type='password' placeholder='Confirm Password' id='confirm_password' name='confirm_password' size="23"><br>
 		         <input type='submit' value='Register' class="btn btn-info btn-block" />
 		</div>
 		</div>

@@ -145,9 +145,22 @@ $(window).scroll(function() {
 $("#toggle a").click(function () {
     $("#toggle a").toggle();
 });
-	
-});
 
+$('.open-tab').click(function (event) {
+    var tab = $(this).attr('href');
+    $("#registration").removeClass("active");
+    $("#userlogin").removeClass("active");
+    $(tab).addClass("active");
+});
+$( "section.aw-accordion div" ).mouseover(function() {
+	  $(this).css('width','50%');
+	  $(this).siblings('div').css('width','14%');
+	});
+});
+jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
 $(function(){
 	$('#register').validate({
         rules: {
@@ -270,7 +283,10 @@ $('#right-panel-link').panelslider({side: 'right', clickClose: false, duration: 
 $('#close-panel-bt').click(function() {
   $.panelslider.close();
 });
-
+function loadRightContent(chk,url){
+	$('.user_right_content').load(url);
+	
+}
 // ==========  START GOOGLE MAP ==========//
 /*function initialize() {
     var myLatLng = new google.maps.LatLng(12.951020, 77.716782);
@@ -299,7 +315,6 @@ $('#close-panel-bt').click(function() {
         title: '',
     });
 }
-<<<<<<< Updated upstream
 google.maps.event.addDomListener(window, "load", initialize);*/
 // ========== END GOOGLE MAP ========== //
 
