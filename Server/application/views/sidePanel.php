@@ -1,9 +1,10 @@
+
 <div id="sidePanel">
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
     <br>
-    <div align="center"><img src="/assets/images/team/leena.JPG" style="width:110px;" class="img-circle"></div>
-    <div align="center"><b> Welcome Leena !</b></div>
+    <div align="center"><img src="<?php if(isset($_SESSION['user_image'])) echo $_SESSION['user_image']; else echo '/assets/images/team/leena.JPG';?>" style="height: 160px;width: 140px;" class="img-circle"></div>
+    <div align="center"><b> Welcome <?php if(isset($_SESSION['name'])) echo $_SESSION['name']; else echo 'User';?></b></div>
     <ul class="nav nav-tabs nav-stacked">
     <li class="active"><a id="overview" onclick="loadRightContent(this,'/admin/overview');" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
     <li><a id="profiile" onclick="loadRightContent(this,'/admin/profile');" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>

@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="/assets/css/media-queries.css">
         <!-- slider css -->
         <link rel="stylesheet" href="/assets/css/slide.css">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="/assets/css/jquery.ui.css">
     </head>
     
     <body id="body">
@@ -37,14 +37,20 @@
 
      <li><a href="#body" style="color:#272727;font-size:25px;line-height: 28px;">OneTrack</a></li>
     	<ul class="nav navbar-nav navbar-right" style="padding-right: 5%;">
-    		<li><div id="right-panel-link" href="#right-panel">
-    		<a href="#userlogin" style="color:#272727;" class="open-tab">Login</a>
-    		<a href="#registration" style="color:#272727;" class="open-tab">SignUp</a>
-    		</div>
-    		</li>
+            <li><div id="right-panel-link" href="#right-panel">
+            <?php if(isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in'])) { ?>
+                <a href="javascript:void(0);" onclick='location.href="/user/logout"' style="color:#272727;" class="open-tab">Logout</a>
+            <?php } else { ?>
+                <a href="javascript:void(0);" style="color:#272727;" class="open-tab">Login</a>
+                <a href="javascript:void(0);" style="color:#272727;" class="open-tab">SignUp</a>
+            <?php } ?>
+            </div>
+            </li>
     	</ul>
     </ul>
     </div>
+       
+    <?php if(!isset($_SESSION['logged_in']) || empty($_SESSION['logged_in'])) { ?> 
     <div id="right-panel" class="panel">
 	<div id="tabs" role="tabpanel">
             <div style="padding-left:5%;">
@@ -77,5 +83,6 @@
 		</div>
             </div>
 	</div>
-</div>
+    </div>
+    <?php } ?>
     

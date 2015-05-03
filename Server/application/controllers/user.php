@@ -15,17 +15,17 @@ class User extends CI_Controller {
             $this->load->library('gmail');
             $this->load->helper('url');
             $this->load->library('curl');
-            if(isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in']) && isset($_SESSION['email']) && !empty($_SESSION['logged_in'])) {
-                redirect(SITEURL.'/dashboard');
-            }
         }
 	
         public function index() { 
+            if(isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in']) && isset($_SESSION['email']) && !empty($_SESSION['logged_in'])) {
+                redirect(SITEURL.'/dashboard');
+            }
             $this->load->view('header');
-            //$this->load->view('navigation_header');
-            //$this->load->view('dashboard');
+            $this->load->view('navigation_header');
+            $this->load->view('dashboard');
             $this->load->view('footer');
-            //$this->load->view('test_view');
+            $this->load->view('test_view');
         }
         
 	/**
@@ -60,13 +60,14 @@ class User extends CI_Controller {
                 }
                 $token  =   $user_model->create_and_update_token($user_id);
                 //Upload picture
-                $user_model->upload_profile_pic($user_id,$login_data['id']);
+                $file = $user_model->upload_profile_pic($user_id,$login_data['id']);
                 $newdata = array(
                     'user_id'   => $user_id,
                     'name'      => isset($login_data['name'])?$login_data['name']:$login_data['first_name'],
                     'email'     => $login_data['email'],
                     'token'     => $token,
-                    'logged_in' => 1,
+                    'user_image'=> $file,
+                    'logged_in' => 1
 
                 );
                 $this->session->set_userdata($newdata);
@@ -116,7 +117,7 @@ class User extends CI_Controller {
             }
 	}
 	
-	public function logout() {
+	public function logout() { 
             $newdata = array(
             'id'        =>  '',
             'email'     =>  '',
@@ -124,9 +125,9 @@ class User extends CI_Controller {
             'token'     =>  '',
             'logged_in' =>  ''
             );
-            $this->session->unset_userdata($newdata );
+            $this->session->unset_userdata($newdata);
             $this->session->sess_destroy();
-            redirect(SITEURL.'/user');
+            redirect(SITEURL);
 	}
         
 }

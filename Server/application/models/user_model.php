@@ -179,6 +179,7 @@ class User_model extends CI_Model {
             $this->db->set('image',$file);
             $this->db->where('id',$user_id);
             $this->db->update('users');
+            return $file;
         }
     }
 
