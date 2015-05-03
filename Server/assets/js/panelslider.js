@@ -117,7 +117,9 @@
   };
   
   $(window).scroll(function (){
+	  if($(document).height()>300){
 	      $.panelslider.close();
+	  }
 	 });
 
   // Bind click outside panel and ESC key to close panel if clickClose is true
